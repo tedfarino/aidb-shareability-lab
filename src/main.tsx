@@ -80,6 +80,16 @@ function App() {
     ["Metrics ingest", "planned"],
     ["Learning loop", "planned"],
   ];
+  const targetChannels = Array.from(new Set(outboundTests.map((test) => test.platform))).join(", ");
+  const intakeContract = [
+    ["Episode URL", selected.link],
+    ["Episode title", selected.title],
+    ["Transcript source", "Transcript source pending"],
+    ["Publish date", selected.date],
+    ["Target channels", targetChannels || "Pending channel selection"],
+    ["Run status", "Contract draft"],
+    ["Next automation step", "Attach transcript source"],
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -173,6 +183,30 @@ function App() {
                 <div className="roadmap-step" key={stage}>
                   <span>{stage}</span>
                   <strong>{status}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="intake-contract" aria-label="Episode intake contract">
+            <div className="panel-header">
+              <Clipboard size={16} aria-hidden="true" />
+              Episode Intake Contract
+            </div>
+            <p className="review-note">
+              Read-only contract for a future background job. Not a live ingestion form.
+            </p>
+            <div className="intake-grid">
+              {intakeContract.map(([label, value]) => (
+                <div className="intake-field" key={label}>
+                  <span>{label}</span>
+                  {label === "Episode URL" ? (
+                    <a href={value} rel="noreferrer" target="_blank">
+                      {value}
+                    </a>
+                  ) : (
+                    <strong>{value}</strong>
+                  )}
                 </div>
               ))}
             </div>

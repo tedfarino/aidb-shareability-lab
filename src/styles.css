@@ -85,6 +85,7 @@ h1 {
 .reason-box,
 .system-summary,
 .automation-roadmap,
+.intake-contract,
 .outbound-queue,
 .moment-card,
 .package-copy,
@@ -296,6 +297,49 @@ h1 {
 .roadmap-step strong {
   color: #17201c;
   font-size: 0.88rem;
+}
+
+.intake-contract {
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.intake-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.intake-field {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #fffdf8;
+}
+
+.intake-field span {
+  display: block;
+  margin-bottom: 5px;
+  color: #52615a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.intake-field strong,
+.intake-field a {
+  display: block;
+  color: #17201c;
+  font-size: 0.9rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.intake-field a:hover {
+  text-decoration: underline;
 }
 
 .outbound-queue {
@@ -540,6 +584,7 @@ meter {
   .method-strip,
   .summary-grid,
   .roadmap-grid,
+  .intake-grid,
   .outbound-grid {
     grid-template-columns: 1fr;
   }
