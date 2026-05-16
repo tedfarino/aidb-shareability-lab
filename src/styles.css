@@ -83,6 +83,7 @@ h1 {
 
 .hero-panel,
 .reason-box,
+.system-summary,
 .outbound-queue,
 .moment-card,
 .package-copy,
@@ -223,6 +224,40 @@ h1 {
   border-color: #237a5d;
   color: #165d45;
   background: #e5f5ed;
+}
+
+.system-summary {
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.summary-item {
+  min-height: 64px;
+  padding: 10px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #fffdf8;
+}
+
+.summary-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: #52615a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.summary-item strong {
+  color: #17201c;
+  font-size: 1rem;
 }
 
 .outbound-queue {
@@ -465,6 +500,7 @@ meter {
   .workspace,
   .moment-grid,
   .method-strip,
+  .summary-grid,
   .outbound-grid {
     grid-template-columns: 1fr;
   }

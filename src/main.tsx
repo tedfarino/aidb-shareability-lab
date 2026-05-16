@@ -33,7 +33,8 @@ function App() {
     (moment) =>
       selectedAudienceChannel === "All" || moment.audienceChannel === selectedAudienceChannel,
   );
-  const outboundTests = selected.moments.slice(0, 3).map((moment) => {
+  const rankedMoments = moments.length > 0 ? moments : selected.moments;
+  const outboundTests = rankedMoments.slice(0, 3).map((moment) => {
     const platform =
       moment.clipCandidate.bestChannel === "Email/newsletter"
         ? "Email"
@@ -53,7 +54,22 @@ function App() {
       metric: moment.clipCandidate.firstTestMetric,
     };
   });
-  const rankedMoments = moments.length > 0 ? moments : selected.moments;
+  const audienceCounts = rankedMoments.reduce(
+    (counts, moment) => ({
+      ...counts,
+      [moment.audienceChannel]: (counts[moment.audienceChannel] ?? 0) + 1,
+    }),
+    {} as Record<AudienceChannel, number>,
+  );
+  const topAudienceChannel =
+    Object.entries(audienceCounts).sort(([, a], [, b]) => b - a)[0]?.[0] ?? "None";
+  const systemSummary = [
+    ["Share moments", rankedMoments.length],
+    ["Channel share assets", rankedMoments.length * 3],
+    ["Clip candidates", rankedMoments.length],
+    ["Outbound tests", outboundTests.length],
+    ["Top audience/channel", topAudienceChannel],
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -118,6 +134,21 @@ function App() {
             <span>Package: share-ready copy</span>
             <span>Measure: tracked source link</span>
           </div>
+
+          <section className="system-summary" aria-label="Growth system summary">
+            <div className="panel-header">
+              <BarChart3 size={16} aria-hidden="true" />
+              Growth system summary
+            </div>
+            <div className="summary-grid">
+              {systemSummary.map(([label, value]) => (
+                <div className="summary-item" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <section className="outbound-queue" aria-label="Outbound test queue">
             <div className="panel-header">
@@ -186,7 +217,7 @@ function App() {
           </div>
 
           <div className="moment-grid">
-            {moments.map((moment) => {
+            {rankedMoments.map((moment) => {
               const Icon = packageIcons[moment.packageType];
               return (
                 <article className="moment-card" key={moment.title}>
