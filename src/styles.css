@@ -325,6 +325,21 @@ dd {
   font-weight: 800;
 }
 
+.tracked-link {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  width: fit-content;
+  color: #165d45;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tracked-link:hover {
+  text-decoration: underline;
+}
+
 .scores {
   display: grid;
   gap: 8px;

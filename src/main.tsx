@@ -172,6 +172,14 @@ function App() {
                       </small>
                     ) : null}
                   </div>
+                  <a
+                    className="tracked-link"
+                    href={buildTrackedLink(selected.link, moment.title)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open tracked source <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
                   <ScoreBars scores={moment.scores} />
                 </article>
               );
@@ -207,6 +215,22 @@ function ScoreBars({
 
 function formatLabel(label: string) {
   return label.replace(/([A-Z])/g, " $1").replace(/^./, (char) => char.toUpperCase());
+}
+
+function buildTrackedLink(sourceLink: string, momentTitle: string) {
+  const url = new URL(sourceLink);
+  url.searchParams.set("utm_source", "aidb_shareability_lab");
+  url.searchParams.set("utm_medium", "share_package");
+  url.searchParams.set("utm_campaign", "may_2026_episode_moments");
+  url.searchParams.set("utm_content", slugify(momentTitle));
+  return url.toString();
+}
+
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 createRoot(document.getElementById("root")!).render(
