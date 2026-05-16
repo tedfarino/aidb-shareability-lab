@@ -83,6 +83,7 @@ h1 {
 
 .hero-panel,
 .reason-box,
+.outbound-queue,
 .moment-card,
 .package-copy,
 .clip-card,
@@ -222,6 +223,31 @@ h1 {
   border-color: #237a5d;
   color: #165d45;
   background: #e5f5ed;
+}
+
+.outbound-queue {
+  margin-bottom: 18px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.outbound-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.outbound-test {
+  padding: 12px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #f7fbf8;
+}
+
+.outbound-test strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.88rem;
 }
 
 .episode-heading {
@@ -438,7 +464,8 @@ meter {
   .hero,
   .workspace,
   .moment-grid,
-  .method-strip {
+  .method-strip,
+  .outbound-grid {
     grid-template-columns: 1fr;
   }
 

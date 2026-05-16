@@ -33,6 +33,26 @@ function App() {
     (moment) =>
       selectedAudienceChannel === "All" || moment.audienceChannel === selectedAudienceChannel,
   );
+  const outboundTests = selected.moments.slice(0, 3).map((moment) => {
+    const platform =
+      moment.clipCandidate.bestChannel === "Email/newsletter"
+        ? "Email"
+        : moment.clipCandidate.bestChannel;
+    const assetType =
+      platform === "Email"
+        ? "Newsletter blurb"
+        : platform === "X"
+          ? "X post"
+          : "LinkedIn post";
+
+    return {
+      platform,
+      audienceChannel: moment.audienceChannel,
+      assetType,
+      trackingLinkType: "UTM source link",
+      metric: moment.clipCandidate.firstTestMetric,
+    };
+  });
   const rankedMoments = moments.length > 0 ? moments : selected.moments;
   const topMoment = useMemo(
     () =>
@@ -98,6 +118,43 @@ function App() {
             <span>Package: share-ready copy</span>
             <span>Measure: tracked source link</span>
           </div>
+
+          <section className="outbound-queue" aria-label="Outbound test queue">
+            <div className="panel-header">
+              <Send size={16} aria-hidden="true" />
+              Outbound test queue
+            </div>
+            <p className="review-note">
+              Manual distribution plan only. Nothing posts automatically.
+            </p>
+            <div className="outbound-grid">
+              {outboundTests.map((test) => (
+                <article className="outbound-test" key={`${test.platform}-${test.audienceChannel}`}>
+                  <strong>
+                    {test.platform} / {test.assetType}
+                  </strong>
+                  <dl>
+                    <div>
+                      <dt>Audience/channel</dt>
+                      <dd>{test.audienceChannel}</dd>
+                    </div>
+                    <div>
+                      <dt>Status</dt>
+                      <dd>Needs human review</dd>
+                    </div>
+                    <div>
+                      <dt>Tracking link type</dt>
+                      <dd>{test.trackingLinkType}</dd>
+                    </div>
+                    <div>
+                      <dt>Metric to check</dt>
+                      <dd>{test.metric}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+          </section>
 
           <div className="perspective-filter" aria-label="Audience/channel filter">
             {audienceChannels.map((audienceChannel) => (
