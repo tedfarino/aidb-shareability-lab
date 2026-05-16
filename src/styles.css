@@ -85,6 +85,7 @@ h1 {
 .reason-box,
 .moment-card,
 .package-copy,
+.clip-card,
 .experiment-card {
   border: 1px solid rgba(22, 32, 28, 0.13);
   border-radius: 8px;
@@ -349,6 +350,47 @@ dd {
   display: inline-block;
   margin-top: 8px;
   color: #237a5d;
+  font-weight: 800;
+}
+
+.asset-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.share-asset {
+  padding-top: 12px;
+  border-top: 1px solid #d8e4dc;
+}
+
+.share-asset:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.asset-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.asset-header strong {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.clip-card {
+  padding: 14px;
+  background: #f8f9ef;
+  box-shadow: none;
+}
+
+.review-note {
+  margin: -4px 0 12px;
+  color: #6b5b2e;
+  font-size: 0.86rem;
   font-weight: 800;
 }
 

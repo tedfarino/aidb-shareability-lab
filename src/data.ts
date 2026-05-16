@@ -15,11 +15,25 @@ export type ShareMoment = {
   afterClick: string;
   packageType: PackageType;
   packageCopy: string;
+  shareAssets: {
+    linkedIn: string;
+    x: string;
+    email: string;
+  };
   experiment: {
     hypothesis: string;
     distributionChannel: string;
     successMetric: string;
     nextTest: string;
+  };
+  clipCandidate: {
+    whyThisMoment: string;
+    bestChannel: string;
+    hook: string;
+    title: string;
+    timestamp: string;
+    riskNote: string;
+    firstTestMetric: string;
   };
   scores: {
     clarity: number;
@@ -62,12 +76,30 @@ export const episodes: Episode[] = [
         packageType: "Slack",
         packageCopy:
           "AIDB had a useful frame today: the next jump is AI that can actually interact, not just answer. Worth using this as a filter on our roadmap: which features merely generate text, and which ones coordinate a real workflow?",
+        shareAssets: {
+          linkedIn:
+            "AIDB had a useful frame today: the next jump is AI that can actually interact, not just answer. For product teams, that is a roadmap filter: which features merely generate text, and which ones coordinate a real workflow?",
+          x:
+            "Useful AIDB frame: the next AI jump is interaction, not just answers. Product test: does this feature generate output, or coordinate a real workflow?",
+          email:
+            "Worth listening to this AIDB segment if you are evaluating AI product roadmaps. The practical question is whether a feature only answers, or whether it can help coordinate a real workflow.",
+        },
         experiment: {
           hypothesis:
             "Operator audiences will share this when the hook is framed as a practical product roadmap filter.",
           distributionChannel: "LinkedIn operator post plus newsletter share link",
           successMetric: "Tracked source clicks from operator-tagged links",
           nextTest: "Test roadmap-filter copy against a shorter quote-led version.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It turns a broad agent trend into a practical product decision filter.",
+          bestChannel: "LinkedIn",
+          hook: "The next AI product question is not 'does it answer?'",
+          title: "AI Products Are Moving From Answers To Interaction",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Confirm the clip preserves the nuance between assistance and autonomy.",
+          firstTestMetric: "3-second hold rate plus tracked source clicks",
         },
         scores: { clarity: 5, urgency: 4, audienceFit: 5, usefulness: 5, trustRisk: 1 },
       },
@@ -85,12 +117,30 @@ export const episodes: Episode[] = [
         packageType: "Email",
         packageCopy:
           "One AIDB segment captured something we should pressure-test: if AI products start acting across tools, UX becomes permissioning, checkpoints, and recovery. That is a sharper product lens than 'add a chatbot.'",
+        shareAssets: {
+          linkedIn:
+            "One AIDB segment captured a sharper product lens for agents: if AI starts acting across tools, UX becomes permissions, checkpoints, and recovery. That is more useful than another 'add a chatbot' take.",
+          x:
+            "AIDB had a sharp agent UX point: once AI acts across tools, UX is permissioning, checkpoints, and recovery. Not just prettier chat.",
+          email:
+            "This AIDB episode is useful for anyone thinking about agent products. The strongest idea is that agent UX is increasingly about permissions, review points, and recovery paths.",
+        },
         experiment: {
           hypothesis:
             "Founder/investor audiences will click when the share emphasizes trust and control as product strategy.",
           distributionChannel: "Investor newsletter blurb",
           successMetric: "Click-through rate to the episode source",
           nextTest: "Compare permission-boundary framing with agent UX framing.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It reframes agent UX as trust infrastructure, not interface polish.",
+          bestChannel: "X",
+          hook: "Agent UX is not just chat. It is permissions and recovery.",
+          title: "The UX Burden Moves Upstream",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Avoid making the segment sound anti-agent or fear-driven.",
+          firstTestMetric: "Repost rate plus click-through to source",
         },
         scores: { clarity: 4, urgency: 4, audienceFit: 5, usefulness: 4, trustRisk: 1 },
       },
@@ -118,12 +168,30 @@ export const episodes: Episode[] = [
         packageType: "Listener brief",
         packageCopy:
           "AIDB's agent advice maps cleanly to management basics: define the outcome, name the constraints, set checkpoints, and say what good looks like. We should turn that into our default agent brief template.",
+        shareAssets: {
+          linkedIn:
+            "AIDB's agent advice maps cleanly to management basics: define the outcome, name the constraints, set checkpoints, and say what good looks like. That is a more teachable frame than 'prompt engineering.'",
+          x:
+            "AIDB's agent advice in one line: treat prompts like delegation. Outcome, constraints, checkpoints, definition of done.",
+          email:
+            "This AIDB episode is a practical listen for people trying to get better results from agents. The key frame is that agent work needs manager language, not mystical prompting.",
+        },
         experiment: {
           hypothesis:
             "AI-curious professionals will share this if the package makes agent use feel like a learnable work skill.",
           distributionChannel: "Email forward and LinkedIn text post",
           successMetric: "Copy actions and tracked listener referrals",
           nextTest: "Test manager-language copy against a checklist-style package.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It makes agent use feel like a familiar management skill instead of a technical trick.",
+          bestChannel: "Email/newsletter",
+          hook: "Prompting agents is starting to look like delegation.",
+          title: "Agents Need Manager Language",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Keep the clip practical; do not imply prompting no longer matters.",
+          firstTestMetric: "Newsletter click rate plus saves",
         },
         scores: { clarity: 5, urgency: 5, audienceFit: 5, usefulness: 5, trustRisk: 1 },
       },
@@ -141,12 +209,30 @@ export const episodes: Episode[] = [
         packageType: "LinkedIn",
         packageCopy:
           "Useful AIDB framing: talking to agents is starting to look less like 'prompt engineering' and more like delegation. Better instructions, clearer constraints, better checkpoints. That is a much more teachable idea for teams.",
+        shareAssets: {
+          linkedIn:
+            "Useful AIDB framing: talking to agents is starting to look less like prompt engineering and more like delegation. Better instructions, clearer constraints, better checkpoints. Much easier to teach.",
+          x:
+            "Prompting is becoming delegation. Better outcomes, clearer constraints, better checkpoints. Strong AIDB frame.",
+          email:
+            "This AIDB episode has a useful frame for anyone explaining agents to a broader audience: prompting is becoming delegation, which makes the skill feel practical and learnable.",
+        },
         experiment: {
           hypothesis:
             "Creators/commentators will reshare this when it gives them a crisp replacement frame for prompt engineering.",
           distributionChannel: "LinkedIn creator post",
           successMetric: "Reposts and attributed episode clicks",
           nextTest: "Test delegation framing against a 'prompting is management' headline.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It gives explainers a clean language shift from prompt engineering to delegation.",
+          bestChannel: "LinkedIn",
+          hook: "Prompting is becoming delegation.",
+          title: "The Better Frame For Talking To Agents",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Avoid oversimplifying agent reliability or management skill transfer.",
+          firstTestMetric: "Share rate among creator/commentator accounts",
         },
         scores: { clarity: 5, urgency: 4, audienceFit: 4, usefulness: 5, trustRisk: 1 },
       },
@@ -174,12 +260,30 @@ export const episodes: Episode[] = [
         packageType: "Listener brief",
         packageCopy:
           "AIDB's point on OpenAI and Anthropic moving into consulting is worth discussing: the scarce thing may not be model access, but implementation capacity. That changes how leaders should evaluate AI vendors and adoption plans.",
+        shareAssets: {
+          linkedIn:
+            "AIDB's point on OpenAI and Anthropic moving into consulting is worth discussing: the scarce thing may not be model access, but implementation capacity. That changes how leaders should evaluate AI vendors and adoption plans.",
+          x:
+            "If OpenAI and Anthropic are moving into consulting, maybe model access is not the bottleneck. Implementation capacity is.",
+          email:
+            "This AIDB episode is useful for anyone evaluating AI adoption plans. The strongest takeaway is that implementation capacity may be more scarce than model access.",
+        },
         experiment: {
           hypothesis:
             "Operator audiences will click when the episode is positioned as a practical AI adoption budget lens.",
           distributionChannel: "Business newsletter blurb",
           successMetric: "Subscribed listeners from tracked links",
           nextTest: "Test implementation-capacity framing against vendor-evaluation framing.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It connects frontier lab strategy to a practical adoption bottleneck.",
+          bestChannel: "LinkedIn",
+          hook: "What if model access is not the scarce thing?",
+          title: "The AI Bottleneck Is Implementation Capacity",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Make clear this is about adoption capacity, not dismissing model quality.",
+          firstTestMetric: "Qualified clicks from operator audiences",
         },
         scores: { clarity: 5, urgency: 4, audienceFit: 5, usefulness: 4, trustRisk: 1 },
       },
@@ -197,12 +301,30 @@ export const episodes: Episode[] = [
         packageType: "Email",
         packageCopy:
           "AIDB had a strong market read: if frontier labs are becoming consultants, the services layer is not boring residue. It may be where capability turns into revenue. Useful lens for AI startup positioning.",
+        shareAssets: {
+          linkedIn:
+            "AIDB had a strong market read: if frontier labs are becoming consultants, the services layer is not boring residue. It may be where AI capability turns into revenue.",
+          x:
+            "AIDB market read: if frontier labs are becoming consultants, the services layer may be where AI capability turns into revenue.",
+          email:
+            "This AIDB segment is worth sharing with founders and investors thinking about AI startup positioning. It reframes services as a possible value-capture layer, not just implementation residue.",
+        },
         experiment: {
           hypothesis:
             "Founder/investor audiences will share this when the angle connects frontier lab behavior to startup value capture.",
           distributionChannel: "Founder email list",
           successMetric: "Forward clicks and new subscriber conversion",
           nextTest: "Test services-layer copy against a market-map style package.",
+        },
+        clipCandidate: {
+          whyThisMoment:
+            "It gives founders and investors a market-structure lens on AI services.",
+          bestChannel: "Email/newsletter",
+          hook: "The services layer may be where AI turns into revenue.",
+          title: "Why AI Services May Not Be Boring",
+          timestamp: "Human review needed: add exact episode timestamp",
+          riskNote: "Avoid making this sound like all value capture moves to services.",
+          firstTestMetric: "Forward clicks plus subscriber conversion",
         },
         scores: { clarity: 4, urgency: 4, audienceFit: 5, usefulness: 4, trustRisk: 1 },
       },

@@ -25,7 +25,7 @@ function App() {
   const [selectedTitle, setSelectedTitle] = useState(episodes[0].title);
   const [selectedAudienceChannel, setSelectedAudienceChannel] = useState<"All" | AudienceChannel>("All");
   const [copyState, setCopyState] = useState<{
-    moment: string;
+    key: string;
     status: "copied" | "failed";
   } | null>(null);
   const selected = episodes.find((episode) => episode.title === selectedTitle) ?? episodes[0];
@@ -165,36 +165,89 @@ function App() {
                     <div className="package-header">
                       <div className="panel-header">
                         <Clipboard size={16} aria-hidden="true" />
-                        Share package
+                        Channel share assets
                       </div>
-                      <button
-                        className="icon-button"
-                        type="button"
-                        title="Copy package"
-                        aria-label={`Copy package for ${moment.title}`}
-                        onClick={async () => {
-                          try {
-                            if (!navigator.clipboard?.writeText) {
-                              throw new Error("Clipboard API unavailable");
-                            }
-                            await navigator.clipboard.writeText(moment.packageCopy);
-                            setCopyState({ moment: moment.title, status: "copied" });
-                          } catch {
-                            setCopyState({ moment: moment.title, status: "failed" });
-                          }
-                        }}
-                      >
-                        <Clipboard size={16} aria-hidden="true" />
-                      </button>
                     </div>
-                    <p>{moment.packageCopy}</p>
-                    {copyState?.moment === moment.title ? (
-                      <small>
-                        {copyState.status === "copied"
-                          ? "Copied"
-                          : "Copy unavailable in this browser"}
-                      </small>
-                    ) : null}
+                    <div className="asset-list">
+                      {[
+                        ["LinkedIn", moment.shareAssets.linkedIn],
+                        ["X", moment.shareAssets.x],
+                        ["Email/newsletter", moment.shareAssets.email],
+                      ].map(([label, copy]) => {
+                        const copyKey = `${moment.title}:${label}`;
+                        return (
+                          <div className="share-asset" key={label}>
+                            <div className="asset-header">
+                              <strong>{label}</strong>
+                              <button
+                                className="icon-button"
+                                type="button"
+                                title={`Copy ${label} asset`}
+                                aria-label={`Copy ${label} asset for ${moment.title}`}
+                                onClick={async () => {
+                                  try {
+                                    if (!navigator.clipboard?.writeText) {
+                                      throw new Error("Clipboard API unavailable");
+                                    }
+                                    await navigator.clipboard.writeText(copy);
+                                    setCopyState({ key: copyKey, status: "copied" });
+                                  } catch {
+                                    setCopyState({ key: copyKey, status: "failed" });
+                                  }
+                                }}
+                              >
+                                <Clipboard size={16} aria-hidden="true" />
+                              </button>
+                            </div>
+                            <p>{copy}</p>
+                            {copyState?.key === copyKey ? (
+                              <small>
+                                {copyState.status === "copied"
+                                  ? "Copied"
+                                  : "Copy unavailable in this browser"}
+                              </small>
+                            ) : null}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="clip-card" aria-label={`Selection and clip candidate for ${moment.title}`}>
+                    <div className="panel-header">
+                      <Sparkles size={16} aria-hidden="true" />
+                      Selection + clip candidate
+                    </div>
+                    <p className="review-note">Human-reviewed candidate, not an auto-clipped asset.</p>
+                    <dl>
+                      <div>
+                        <dt>Why this moment matters</dt>
+                        <dd>{moment.clipCandidate.whyThisMoment}</dd>
+                      </div>
+                      <div>
+                        <dt>Best channel</dt>
+                        <dd>{moment.clipCandidate.bestChannel}</dd>
+                      </div>
+                      <div>
+                        <dt>Suggested clip hook</dt>
+                        <dd>{moment.clipCandidate.hook}</dd>
+                      </div>
+                      <div>
+                        <dt>Suggested clip title</dt>
+                        <dd>{moment.clipCandidate.title}</dd>
+                      </div>
+                      <div>
+                        <dt>Timestamp placeholder</dt>
+                        <dd>{moment.clipCandidate.timestamp}</dd>
+                      </div>
+                      <div>
+                        <dt>Risk note</dt>
+                        <dd>{moment.clipCandidate.riskNote}</dd>
+                      </div>
+                      <div>
+                        <dt>First test metric</dt>
+                        <dd>{moment.clipCandidate.firstTestMetric}</dd>
+                      </div>
+                    </dl>
                   </div>
                   <div className="experiment-card" aria-label={`Experiment plan for ${moment.title}`}>
                     <div className="panel-header">
