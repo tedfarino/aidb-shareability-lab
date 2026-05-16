@@ -23,7 +23,10 @@ const packageIcons: Record<PackageType, typeof MessageSquare> = {
 
 function App() {
   const [selectedTitle, setSelectedTitle] = useState(episodes[0].title);
-  const [copiedMoment, setCopiedMoment] = useState<string | null>(null);
+  const [copyState, setCopyState] = useState<{
+    moment: string;
+    status: "copied" | "failed";
+  } | null>(null);
   const selected = episodes.find((episode) => episode.title === selectedTitle) ?? episodes[0];
   const moments = selected.moments;
   const topMoment = useMemo(
@@ -84,6 +87,13 @@ function App() {
         </aside>
 
         <section className="analysis">
+          <div className="method-strip" aria-label="Prototype method">
+            <span>Input: episode</span>
+            <span>Tag: share intent</span>
+            <span>Package: recipient-ready copy</span>
+            <span>Measure: copy/share signal</span>
+          </div>
+
           <div className="episode-heading">
             <div>
               <p className="eyebrow compact">Selected episode</p>
@@ -139,15 +149,28 @@ function App() {
                         title="Copy package"
                         aria-label={`Copy package for ${moment.title}`}
                         onClick={async () => {
-                          await navigator.clipboard.writeText(moment.packageCopy);
-                          setCopiedMoment(moment.title);
+                          try {
+                            if (!navigator.clipboard?.writeText) {
+                              throw new Error("Clipboard API unavailable");
+                            }
+                            await navigator.clipboard.writeText(moment.packageCopy);
+                            setCopyState({ moment: moment.title, status: "copied" });
+                          } catch {
+                            setCopyState({ moment: moment.title, status: "failed" });
+                          }
                         }}
                       >
                         <Clipboard size={16} aria-hidden="true" />
                       </button>
                     </div>
                     <p>{moment.packageCopy}</p>
-                    {copiedMoment === moment.title ? <small>Copied</small> : null}
+                    {copyState?.moment === moment.title ? (
+                      <small>
+                        {copyState.status === "copied"
+                          ? "Copied"
+                          : "Copy unavailable in this browser"}
+                      </small>
+                    ) : null}
                   </div>
                   <ScoreBars scores={moment.scores} />
                 </article>

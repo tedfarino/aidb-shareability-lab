@@ -178,6 +178,24 @@ h1 {
   min-width: 0;
 }
 
+.method-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.method-strip span {
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  color: #2f483d;
+  background: #fffdf8;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
 .episode-heading {
   display: flex;
   gap: 20px;
@@ -329,7 +347,8 @@ meter {
 @media (max-width: 900px) {
   .hero,
   .workspace,
-  .moment-grid {
+  .moment-grid,
+  .method-strip {
     grid-template-columns: 1fr;
   }
 
