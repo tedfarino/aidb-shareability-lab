@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vite/
+.env
+.env.*
+vite.out.log
+vite.err.log
+npm-debug.log*
+*.log
+aidb-growth-engineer-application-draft.md
+aidb-growth-engineer-application-final.md
+aidb-growth-engineer-skill-plan.md
