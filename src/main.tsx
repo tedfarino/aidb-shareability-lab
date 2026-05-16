@@ -90,6 +90,14 @@ function App() {
     ["Run status", "Contract draft"],
     ["Next automation step", "Attach transcript source"],
   ];
+  const dataSources = [
+    ["AIDB RSS or episode page", "used"],
+    ["YouTube/transcript source", "planned"],
+    ["X API for taste calibration", "prototyped"],
+    ["UTM analytics", "planned"],
+    ["Manual LinkedIn/X/email posting", "manual"],
+    ["Optional clipping tool/human review", "prototyped"],
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -207,6 +215,24 @@ function App() {
                   ) : (
                     <strong>{value}</strong>
                   )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="data-sources" aria-label="Data sources and integrations">
+            <div className="panel-header">
+              <BriefcaseBusiness size={16} aria-hidden="true" />
+              Data Sources + Integrations
+            </div>
+            <p className="review-note">
+              Intended sources and tools for future automation. No integrations are connected here.
+            </p>
+            <div className="source-grid">
+              {dataSources.map(([source, status]) => (
+                <div className="source-item" key={source}>
+                  <span>{source}</span>
+                  <strong>{status}</strong>
                 </div>
               ))}
             </div>
