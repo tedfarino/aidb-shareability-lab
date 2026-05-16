@@ -1,4 +1,4 @@
-# AIDB Company Champion Kit
+# AIDB Audience Growth Lab
 
 A small growth-engineering prototype for the AI Daily Brief Growth Engineer application.
 
@@ -6,16 +6,16 @@ Live demo: https://tedfarino.github.io/aidb-shareability-lab/
 
 The kit maps May 2026 AIDB episodes to:
 
-- company champion moments
+- audience growth moments
 - likely sharers
 - likely recipients
 - the reason a moment travels
-- reusable packaging for Slack, email, LinkedIn, and executive memos
+- reusable packaging for share, social, email, and briefing contexts
 - a simple scoring rubric for shareability
 
 ## Why This Exists
 
-The role is about making AIDB easier to share. This project is the first version of that system: a lightweight way to turn strong episode analysis into workplace-ready briefing objects listeners can use inside companies, teams, and executive channels.
+The role is about making AIDB easier to share. This project is the first version of that system: a lightweight way to turn strong episode analysis into share-ready audience growth objects that can travel beyond the current listener.
 
 ## Stack
 

@@ -84,7 +84,8 @@ h1 {
 .hero-panel,
 .reason-box,
 .moment-card,
-.package-copy {
+.package-copy,
+.experiment-card {
   border: 1px solid rgba(22, 32, 28, 0.13);
   border-radius: 8px;
   background: #fffdf8;
@@ -349,6 +350,12 @@ dd {
   margin-top: 8px;
   color: #237a5d;
   font-weight: 800;
+}
+
+.experiment-card {
+  padding: 14px;
+  background: #f6f1e8;
+  box-shadow: none;
 }
 
 .tracked-link {

@@ -11,26 +11,27 @@ import {
   Send,
   Sparkles,
 } from "lucide-react";
-import { episodes, PackageType, Perspective, perspectives, scoreLabels } from "./data";
+import { audienceChannels, AudienceChannel, episodes, PackageType, scoreLabels } from "./data";
 import "./styles.css";
 
 const packageIcons: Record<PackageType, typeof MessageSquare> = {
   Slack: MessageSquare,
   Email: Mail,
   LinkedIn: Send,
-  "Exec memo": BriefcaseBusiness,
+  "Listener brief": BriefcaseBusiness,
 };
 
 function App() {
   const [selectedTitle, setSelectedTitle] = useState(episodes[0].title);
-  const [selectedPerspective, setSelectedPerspective] = useState<"All" | Perspective>("All");
+  const [selectedAudienceChannel, setSelectedAudienceChannel] = useState<"All" | AudienceChannel>("All");
   const [copyState, setCopyState] = useState<{
     moment: string;
     status: "copied" | "failed";
   } | null>(null);
   const selected = episodes.find((episode) => episode.title === selectedTitle) ?? episodes[0];
   const moments = selected.moments.filter(
-    (moment) => selectedPerspective === "All" || moment.perspective === selectedPerspective,
+    (moment) =>
+      selectedAudienceChannel === "All" || moment.audienceChannel === selectedAudienceChannel,
   );
   const rankedMoments = moments.length > 0 ? moments : selected.moments;
   const topMoment = useMemo(
@@ -55,22 +56,22 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow">
             <Radio size={16} aria-hidden="true" />
-            AIDB Company Champion Kit
+            AIDB Audience Growth Lab
           </p>
-          <h1>Turn AIDB episodes into workplace-ready briefing objects.</h1>
+          <h1>Turn AIDB episodes into audience-ready share moments.</h1>
           <p>
-            A growth-engineering prototype for the listener already bringing AI judgment into
-            their company, team, or executive channel.
+            A growth-engineering prototype for finding which episode ideas travel beyond the
+            current listener and help the show earn its next audience.
           </p>
         </div>
         <div className="hero-panel" aria-label="Top share candidate">
           <div className="panel-header">
             <Sparkles size={18} aria-hidden="true" />
-            Best champion moment
+            Best growth moment
           </div>
           <h2>{topMoment.title}</h2>
           <p>{topMoment.why}</p>
-          <span className="score-pill">Champion score {topMoment.total}/19</span>
+          <span className="score-pill">Growth score {topMoment.total}/19</span>
         </div>
       </section>
 
@@ -93,20 +94,20 @@ function App() {
         <section className="analysis">
           <div className="method-strip" aria-label="Prototype method">
             <span>Input: episode</span>
-            <span>Find: company champion moment</span>
-            <span>Package: workplace-ready copy</span>
+            <span>Find: audience growth moment</span>
+            <span>Package: share-ready copy</span>
             <span>Measure: tracked source link</span>
           </div>
 
-          <div className="perspective-filter" aria-label="Recipient perspective">
-            {perspectives.map((perspective) => (
+          <div className="perspective-filter" aria-label="Audience/channel filter">
+            {audienceChannels.map((audienceChannel) => (
               <button
-                className={perspective === selectedPerspective ? "active" : ""}
-                key={perspective}
-                onClick={() => setSelectedPerspective(perspective)}
+                className={audienceChannel === selectedAudienceChannel ? "active" : ""}
+                key={audienceChannel}
+                onClick={() => setSelectedAudienceChannel(audienceChannel)}
                 type="button"
               >
-                {perspective}
+                {audienceChannel}
               </button>
             ))}
           </div>
@@ -135,7 +136,7 @@ function App() {
                   <div className="moment-card-header">
                     <div>
                       <p className="eyebrow compact">
-                        {moment.perspective} / {moment.packageType}
+                        {moment.audienceChannel} / {moment.packageType}
                       </p>
                       <h3>{moment.title}</h3>
                     </div>
@@ -148,7 +149,7 @@ function App() {
                       <dd>{moment.sharer}</dd>
                     </div>
                     <div>
-                      <dt>Recipient</dt>
+                      <dt>Audience/channel</dt>
                       <dd>{moment.recipient}</dd>
                     </div>
                     <div>
@@ -164,7 +165,7 @@ function App() {
                     <div className="package-header">
                       <div className="panel-header">
                         <Clipboard size={16} aria-hidden="true" />
-                        Forwardable package
+                        Share package
                       </div>
                       <button
                         className="icon-button"
@@ -194,6 +195,30 @@ function App() {
                           : "Copy unavailable in this browser"}
                       </small>
                     ) : null}
+                  </div>
+                  <div className="experiment-card" aria-label={`Experiment plan for ${moment.title}`}>
+                    <div className="panel-header">
+                      <BarChart3 size={16} aria-hidden="true" />
+                      Experiment
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>Hypothesis</dt>
+                        <dd>{moment.experiment.hypothesis}</dd>
+                      </div>
+                      <div>
+                        <dt>Distribution channel</dt>
+                        <dd>{moment.experiment.distributionChannel}</dd>
+                      </div>
+                      <div>
+                        <dt>Success metric</dt>
+                        <dd>{moment.experiment.successMetric}</dd>
+                      </div>
+                      <div>
+                        <dt>Next test</dt>
+                        <dd>{moment.experiment.nextTest}</dd>
+                      </div>
+                    </dl>
                   </div>
                   <a
                     className="tracked-link"
