@@ -11,7 +11,7 @@ import {
   Send,
   Sparkles,
 } from "lucide-react";
-import { episodes, PackageType, scoreLabels } from "./data";
+import { episodes, PackageType, Perspective, perspectives, scoreLabels } from "./data";
 import "./styles.css";
 
 const packageIcons: Record<PackageType, typeof MessageSquare> = {
@@ -23,15 +23,19 @@ const packageIcons: Record<PackageType, typeof MessageSquare> = {
 
 function App() {
   const [selectedTitle, setSelectedTitle] = useState(episodes[0].title);
+  const [selectedPerspective, setSelectedPerspective] = useState<"All" | Perspective>("All");
   const [copyState, setCopyState] = useState<{
     moment: string;
     status: "copied" | "failed";
   } | null>(null);
   const selected = episodes.find((episode) => episode.title === selectedTitle) ?? episodes[0];
-  const moments = selected.moments;
+  const moments = selected.moments.filter(
+    (moment) => selectedPerspective === "All" || moment.perspective === selectedPerspective,
+  );
+  const rankedMoments = moments.length > 0 ? moments : selected.moments;
   const topMoment = useMemo(
     () =>
-      moments
+      rankedMoments
         .map((moment) => ({
           ...moment,
           total:
@@ -42,7 +46,7 @@ function App() {
             moment.scores.trustRisk,
         }))
         .sort((a, b) => b.total - a.total)[0],
-    [moments],
+    [rankedMoments],
   );
 
   return (
@@ -94,6 +98,19 @@ function App() {
             <span>Measure: tracked source link</span>
           </div>
 
+          <div className="perspective-filter" aria-label="Recipient perspective">
+            {perspectives.map((perspective) => (
+              <button
+                className={perspective === selectedPerspective ? "active" : ""}
+                key={perspective}
+                onClick={() => setSelectedPerspective(perspective)}
+                type="button"
+              >
+                {perspective}
+              </button>
+            ))}
+          </div>
+
           <div className="episode-heading">
             <div>
               <p className="eyebrow compact">Selected episode</p>
@@ -117,7 +134,9 @@ function App() {
                 <article className="moment-card" key={moment.title}>
                   <div className="moment-card-header">
                     <div>
-                      <p className="eyebrow compact">{moment.packageType}</p>
+                      <p className="eyebrow compact">
+                        {moment.perspective} / {moment.packageType}
+                      </p>
                       <h3>{moment.title}</h3>
                     </div>
                     <Icon size={20} aria-hidden="true" />

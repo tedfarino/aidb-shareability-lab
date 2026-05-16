@@ -1,7 +1,9 @@
 export type PackageType = "Slack" | "Email" | "LinkedIn" | "Exec memo";
+export type Perspective = "Exec" | "Manager" | "Builder" | "Investor/Sponsor";
 
 export type ShareMoment = {
   title: string;
+  perspective: Perspective;
   what: string;
   sharer: string;
   recipient: string;
@@ -38,6 +40,7 @@ export const episodes: Episode[] = [
     moments: [
       {
         title: "Interaction becomes the product",
+        perspective: "Builder",
         what:
           "The useful frame is that AI value is shifting from producing outputs to coordinating real workflows across tools, people, and decisions.",
         sharer: "A product lead",
@@ -53,6 +56,7 @@ export const episodes: Episode[] = [
       },
       {
         title: "The UX burden moves upstream",
+        perspective: "Manager",
         what:
           "As agents interact with more systems, product teams need stronger constraints, permissions, and review points instead of prettier chat boxes.",
         sharer: "A startup founder",
@@ -78,6 +82,7 @@ export const episodes: Episode[] = [
     moments: [
       {
         title: "Agent work needs manager language",
+        perspective: "Manager",
         what:
           "The key shareable idea is that agents respond better to clear goals, constraints, checkpoints, and evaluation criteria than vague prompts.",
         sharer: "An operations manager",
@@ -93,6 +98,7 @@ export const episodes: Episode[] = [
       },
       {
         title: "Prompting is becoming delegation",
+        perspective: "Builder",
         what:
           "The episode reframes prompt quality as delegation quality, which makes the advice easy to teach inside a company.",
         sharer: "A department head",
@@ -118,6 +124,7 @@ export const episodes: Episode[] = [
     moments: [
       {
         title: "Model access is not the whole product",
+        perspective: "Exec",
         what:
           "The episode's business implication is that enterprises need implementation judgment, integration help, and workflow redesign as much as raw model access.",
         sharer: "A CIO or transformation lead",
@@ -133,6 +140,7 @@ export const episodes: Episode[] = [
       },
       {
         title: "The services layer becomes strategic",
+        perspective: "Investor/Sponsor",
         what:
           "The consulting move suggests the AI market is rewarding the firms that can translate frontier capability into deployed business process.",
         sharer: "A startup investor",
@@ -157,3 +165,11 @@ export const scoreLabels = [
   "usefulness",
   "trustRisk",
 ] as const;
+
+export const perspectives: Array<"All" | Perspective> = [
+  "All",
+  "Exec",
+  "Manager",
+  "Builder",
+  "Investor/Sponsor",
+];

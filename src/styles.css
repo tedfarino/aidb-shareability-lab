@@ -196,6 +196,32 @@ h1 {
   font-weight: 800;
 }
 
+.perspective-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.perspective-filter button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #d8d5ca;
+  border-radius: 999px;
+  color: #2f483d;
+  background: #fffdf8;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.perspective-filter button:hover,
+.perspective-filter button.active {
+  border-color: #237a5d;
+  color: #165d45;
+  background: #e5f5ed;
+}
+
 .episode-heading {
   display: flex;
   gap: 20px;
