@@ -78,9 +78,9 @@ export const episodes: Episode[] = [
           "AIDB had a useful frame today: the next jump is AI that can actually interact, not just answer. Worth using this as a filter on our roadmap: which features merely generate text, and which ones coordinate a real workflow?",
         shareAssets: {
           linkedIn:
-            "AIDB had a useful frame today: the next jump is AI that can actually interact, not just answer. For product teams, that is a roadmap filter: which features merely generate text, and which ones coordinate a real workflow?",
+            "AI products are moving from answering questions to taking actions across tools.\n\nThat changes the product question: is this just generating output, or actually coordinating work?",
           x:
-            "Useful AIDB frame: the next AI jump is interaction, not just answers. Product test: does this feature generate output, or coordinate a real workflow?",
+            "AI products are moving from answers to actions.\n\nThe product test: does this generate output, or actually coordinate work?",
           email:
             "Worth listening to this AIDB segment if you are evaluating AI product roadmaps. The practical question is whether a feature only answers, or whether it can help coordinate a real workflow.",
         },
@@ -119,9 +119,9 @@ export const episodes: Episode[] = [
           "One AIDB segment captured something we should pressure-test: if AI products start acting across tools, UX becomes permissioning, checkpoints, and recovery. That is a sharper product lens than 'add a chatbot.'",
         shareAssets: {
           linkedIn:
-            "One AIDB segment captured a sharper product lens for agents: if AI starts acting across tools, UX becomes permissions, checkpoints, and recovery. That is more useful than another 'add a chatbot' take.",
+            "If AI agents are going to act across tools, UX is not just the chat box.\n\nIt is permissions, checkpoints, recovery, and trust.\n\nThat is a much sharper product lens than simply adding a chatbot.",
           x:
-            "AIDB had a sharp agent UX point: once AI acts across tools, UX is permissioning, checkpoints, and recovery. Not just prettier chat.",
+            "Once AI acts across tools, UX becomes permissions, checkpoints, and recovery.\n\nNot just prettier chat.",
           email:
             "This AIDB episode is useful for anyone thinking about agent products. The strongest idea is that agent UX is increasingly about permissions, review points, and recovery paths.",
         },
@@ -170,9 +170,9 @@ export const episodes: Episode[] = [
           "AIDB's agent advice maps cleanly to management basics: define the outcome, name the constraints, set checkpoints, and say what good looks like. We should turn that into our default agent brief template.",
         shareAssets: {
           linkedIn:
-            "AIDB's agent advice maps cleanly to management basics: define the outcome, name the constraints, set checkpoints, and say what good looks like. That is a more teachable frame than 'prompt engineering.'",
+            "Getting better results from agents may look less like prompt engineering and more like management.\n\nDefine the outcome. Name the constraints. Set checkpoints. Say what good looks like.",
           x:
-            "AIDB's agent advice in one line: treat prompts like delegation. Outcome, constraints, checkpoints, definition of done.",
+            "Agent work needs manager language:\n\nOutcome. Constraints. Checkpoints. Definition of done.",
           email:
             "This AIDB episode is a practical listen for people trying to get better results from agents. The key frame is that agent work needs manager language, not mystical prompting.",
         },
@@ -211,9 +211,9 @@ export const episodes: Episode[] = [
           "Useful AIDB framing: talking to agents is starting to look less like 'prompt engineering' and more like delegation. Better instructions, clearer constraints, better checkpoints. That is a much more teachable idea for teams.",
         shareAssets: {
           linkedIn:
-            "Useful AIDB framing: talking to agents is starting to look less like prompt engineering and more like delegation. Better instructions, clearer constraints, better checkpoints. Much easier to teach.",
+            "Prompting is starting to look less like a trick and more like delegation.\n\nBetter instructions, clearer constraints, better checkpoints.\n\nThat is a much easier skill to teach.",
           x:
-            "Prompting is becoming delegation. Better outcomes, clearer constraints, better checkpoints. Strong AIDB frame.",
+            "Prompting is becoming delegation.\n\nBetter instructions. Clearer constraints. Better checkpoints.",
           email:
             "This AIDB episode has a useful frame for anyone explaining agents to a broader audience: prompting is becoming delegation, which makes the skill feel practical and learnable.",
         },
@@ -262,9 +262,9 @@ export const episodes: Episode[] = [
           "AIDB's point on OpenAI and Anthropic moving into consulting is worth discussing: the scarce thing may not be model access, but implementation capacity. That changes how leaders should evaluate AI vendors and adoption plans.",
         shareAssets: {
           linkedIn:
-            "AIDB's point on OpenAI and Anthropic moving into consulting is worth discussing: the scarce thing may not be model access, but implementation capacity. That changes how leaders should evaluate AI vendors and adoption plans.",
+            "OpenAI and Anthropic moving deeper into consulting says something important:\n\nFor enterprises, the bottleneck may not be access to models.\n\nIt may be the ability to actually implement them.",
           x:
-            "If OpenAI and Anthropic are moving into consulting, maybe model access is not the bottleneck. Implementation capacity is.",
+            "OpenAI and Anthropic moving into consulting is a signal:\n\nModel access may not be the bottleneck.\n\nImplementation capacity may be.",
           email:
             "This AIDB episode is useful for anyone evaluating AI adoption plans. The strongest takeaway is that implementation capacity may be more scarce than model access.",
         },
@@ -303,9 +303,9 @@ export const episodes: Episode[] = [
           "AIDB had a strong market read: if frontier labs are becoming consultants, the services layer is not boring residue. It may be where capability turns into revenue. Useful lens for AI startup positioning.",
         shareAssets: {
           linkedIn:
-            "AIDB had a strong market read: if frontier labs are becoming consultants, the services layer is not boring residue. It may be where AI capability turns into revenue.",
+            "Frontier labs moving into consulting is a market signal.\n\nThe services layer may not be boring implementation residue.\n\nIt may be where AI capability actually turns into revenue.",
           x:
-            "AIDB market read: if frontier labs are becoming consultants, the services layer may be where AI capability turns into revenue.",
+            "If frontier labs are becoming consultants, the services layer may not be residue.\n\nIt may be where AI turns into revenue.",
           email:
             "This AIDB segment is worth sharing with founders and investors thinking about AI startup positioning. It reframes services as a possible value-capture layer, not just implementation residue.",
         },
