@@ -136,6 +136,10 @@ function App() {
                       <dt>Why it travels</dt>
                       <dd>{moment.why}</dd>
                     </div>
+                    <div>
+                      <dt>After the click</dt>
+                      <dd>{moment.afterClick}</dd>
+                    </div>
                   </dl>
                   <div className="package-copy">
                     <div className="package-header">

@@ -6,6 +6,7 @@ export type ShareMoment = {
   sharer: string;
   recipient: string;
   why: string;
+  afterClick: string;
   packageType: PackageType;
   packageCopy: string;
   scores: {
@@ -43,6 +44,8 @@ export const episodes: Episode[] = [
         recipient: "Their design, engineering, and ops leads",
         why:
           "It gives the team a cleaner way to evaluate AI features: not 'does it answer?' but 'can it move work forward?'",
+        afterClick:
+          "Use this as a 15-minute roadmap filter: mark each AI feature as answer-only, workflow-assisting, or workflow-owning.",
         packageType: "Slack",
         packageCopy:
           "AIDB had a useful frame today: the next jump is AI that can actually interact, not just answer. Worth using this as a filter on our roadmap: which features merely generate text, and which ones coordinate a real workflow?",
@@ -56,6 +59,8 @@ export const episodes: Episode[] = [
         recipient: "Their founding team or investor update list",
         why:
           "It turns a broad AI trend into an immediate company-building question about trust and control.",
+        afterClick:
+          "Ask product and ops leads to name the first permission boundary that would make an agent safe enough to trial.",
         packageType: "Email",
         packageCopy:
           "One AIDB segment captured something we should pressure-test: if AI products start acting across tools, UX becomes permissioning, checkpoints, and recovery. That is a sharper product lens than 'add a chatbot.'",
@@ -79,6 +84,8 @@ export const episodes: Episode[] = [
         recipient: "A team experimenting with AI workflows",
         why:
           "It gives non-technical teammates a practical upgrade path without requiring them to learn model internals.",
+        afterClick:
+          "Turn one recurring team task into an agent brief with outcome, constraints, checkpoints, and definition of done.",
         packageType: "Exec memo",
         packageCopy:
           "AIDB's agent advice maps cleanly to management basics: define the outcome, name the constraints, set checkpoints, and say what good looks like. We should turn that into our default agent brief template.",
@@ -92,6 +99,8 @@ export const episodes: Episode[] = [
         recipient: "Peers trying to improve AI adoption",
         why:
           "It makes AI adoption feel less mystical and more like a recognizable management skill.",
+        afterClick:
+          "Rewrite one vague AI request as delegated work: owner, goal, constraints, examples, and review point.",
         packageType: "LinkedIn",
         packageCopy:
           "Useful AIDB framing: talking to agents is starting to look less like 'prompt engineering' and more like delegation. Better instructions, clearer constraints, better checkpoints. That is a much more teachable idea for teams.",
@@ -115,6 +124,8 @@ export const episodes: Episode[] = [
         recipient: "Executive staff",
         why:
           "It helps leaders understand why AI budgets are shifting toward services, enablement, and operating model change.",
+        afterClick:
+          "Audit one AI initiative for missing implementation capacity: workflow owner, training loop, integration path, and success metric.",
         packageType: "Exec memo",
         packageCopy:
           "AIDB's point on OpenAI and Anthropic moving into consulting is worth discussing: the scarce thing may not be model access, but implementation capacity. That changes how we should evaluate AI vendors and internal staffing.",
@@ -128,6 +139,8 @@ export const episodes: Episode[] = [
         recipient: "Portfolio founders",
         why:
           "It points founders toward value capture in enablement, migration, workflow, and vertical implementation.",
+        afterClick:
+          "Map one customer workflow where services, enablement, or process redesign may be more valuable than model access.",
         packageType: "Email",
         packageCopy:
           "AIDB had a strong market read: if frontier labs are becoming consultants, the services layer is not boring residue. It may be where capability turns into revenue. Useful lens for AI startup positioning.",
