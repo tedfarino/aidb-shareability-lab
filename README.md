@@ -1,12 +1,12 @@
-# AIDB Shareability Lab
+# AIDB Company Champion Kit
 
 A small growth-engineering prototype for the AI Daily Brief Growth Engineer application.
 
 Live demo: https://tedfarino.github.io/aidb-shareability-lab/
 
-The lab maps May 2026 AIDB episodes to:
+The kit maps May 2026 AIDB episodes to:
 
-- shareable moments
+- company champion moments
 - likely sharers
 - likely recipients
 - the reason a moment travels
@@ -15,7 +15,7 @@ The lab maps May 2026 AIDB episodes to:
 
 ## Why This Exists
 
-The role is about making AIDB easier to share. This project is the first version of that system: a lightweight way to turn strong episode analysis into forwarding objects listeners can use inside companies, communities, and social channels.
+The role is about making AIDB easier to share. This project is the first version of that system: a lightweight way to turn strong episode analysis into workplace-ready briefing objects listeners can use inside companies, teams, and executive channels.
 
 ## Stack
 

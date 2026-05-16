@@ -51,22 +51,22 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow">
             <Radio size={16} aria-hidden="true" />
-            AIDB Shareability Lab
+            AIDB Company Champion Kit
           </p>
-          <h1>Turn strong AI analysis into things listeners actually forward.</h1>
+          <h1>Turn AIDB episodes into workplace-ready briefing objects.</h1>
           <p>
-            A small growth-engineering prototype for mapping AI Daily Brief episodes to the
-            audiences, moments, and packages most likely to travel.
+            A growth-engineering prototype for the listener already bringing AI judgment into
+            their company, team, or executive channel.
           </p>
         </div>
         <div className="hero-panel" aria-label="Top share candidate">
           <div className="panel-header">
             <Sparkles size={18} aria-hidden="true" />
-            Best share candidate
+            Best champion moment
           </div>
           <h2>{topMoment.title}</h2>
           <p>{topMoment.why}</p>
-          <span className="score-pill">Share score {topMoment.total}/19</span>
+          <span className="score-pill">Champion score {topMoment.total}/19</span>
         </div>
       </section>
 
@@ -89,9 +89,9 @@ function App() {
         <section className="analysis">
           <div className="method-strip" aria-label="Prototype method">
             <span>Input: episode</span>
-            <span>Tag: share intent</span>
-            <span>Package: recipient-ready copy</span>
-            <span>Measure: copy/share signal</span>
+            <span>Find: company champion moment</span>
+            <span>Package: workplace-ready copy</span>
+            <span>Measure: tracked source link</span>
           </div>
 
           <div className="episode-heading">
