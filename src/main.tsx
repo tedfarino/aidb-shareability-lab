@@ -70,6 +70,16 @@ function App() {
     ["Outbound tests", outboundTests.length],
     ["Top audience/channel", topAudienceChannel],
   ];
+  const automationRoadmap = [
+    ["Episode ingest", "planned"],
+    ["Transcript analysis", "planned"],
+    ["Asset generation", "prototyped"],
+    ["Human review", "prototyped"],
+    ["Outbound queue", "prototyped"],
+    ["Posting", "manual only"],
+    ["Metrics ingest", "planned"],
+    ["Learning loop", "planned"],
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -145,6 +155,24 @@ function App() {
                 <div className="summary-item" key={label}>
                   <span>{label}</span>
                   <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="automation-roadmap" aria-label="Automation roadmap">
+            <div className="panel-header">
+              <Sparkles size={16} aria-hidden="true" />
+              Automation roadmap
+            </div>
+            <p className="review-note">
+              Operator console prototype for automated growth workflows. No backend or auto-posting.
+            </p>
+            <div className="roadmap-grid">
+              {automationRoadmap.map(([stage, status]) => (
+                <div className="roadmap-step" key={stage}>
+                  <span>{stage}</span>
+                  <strong>{status}</strong>
                 </div>
               ))}
             </div>
