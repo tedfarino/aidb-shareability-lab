@@ -98,6 +98,17 @@ function App() {
     ["Manual LinkedIn/X/email posting", "manual"],
     ["Optional clipping tool/human review", "prototyped"],
   ];
+  const processingRunbook = [
+    "Ingest episode URL/transcript",
+    "Extract candidate moments",
+    "Score/risk-review moments",
+    "Generate channel assets",
+    "Produce clip candidates",
+    "Queue outbound tests",
+    "Human approve/edit/reject",
+    "Measure results",
+    "Feed learnings into next episode",
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -233,6 +244,21 @@ function App() {
                 <div className="source-item" key={source}>
                   <span>{source}</span>
                   <strong>{status}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="processing-runbook" aria-label="Episode processing runbook">
+            <div className="panel-header">
+              <Clipboard size={16} aria-hidden="true" />
+              Episode Processing Runbook
+            </div>
+            <div className="runbook-grid">
+              {processingRunbook.map((step, index) => (
+                <div className="runbook-step" key={step}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{step}</strong>
                 </div>
               ))}
             </div>
