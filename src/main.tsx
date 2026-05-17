@@ -132,6 +132,15 @@ function App() {
     "Record timestamp",
     "Check metrics after 24h",
   ];
+  const manualExperimentLoop = [
+    "Select episode moment",
+    "Generate channel asset",
+    "Human approves copy",
+    "Post manually",
+    "Record timestamp",
+    "Check 24h metrics",
+    "Decide keep / change / drop",
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -314,6 +323,21 @@ function App() {
             <p className="review-note">No posting is automated.</p>
             <ol className="checklist-steps">
               {manualPostingChecklist.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="manual-loop" aria-label="Manual experiment loop">
+            <div className="panel-header">
+              <BarChart3 size={16} aria-hidden="true" />
+              Manual Experiment Loop
+            </div>
+            <p className="review-note">
+              Current test prepared: model-access-is-not-the-whole-product, manual posting pending.
+            </p>
+            <ol className="loop-steps">
+              {manualExperimentLoop.map((step) => (
                 <li key={step}>{step}</li>
               ))}
             </ol>
