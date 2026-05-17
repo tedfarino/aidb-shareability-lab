@@ -89,6 +89,7 @@ h1 {
 .intake-contract,
 .data-sources,
 .processing-runbook,
+.manual-checklist,
 .outbound-queue,
 .moment-card,
 .package-copy,
@@ -466,6 +467,33 @@ h1 {
   line-height: 1.25;
 }
 
+.manual-checklist {
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.checklist-steps {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist-steps li {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #fffdf8;
+  color: #17201c;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
 .outbound-queue {
   margin-bottom: 18px;
   padding: 14px;
@@ -712,6 +740,7 @@ meter {
   .intake-grid,
   .source-grid,
   .runbook-grid,
+  .checklist-steps,
   .outbound-grid {
     grid-template-columns: 1fr;
   }

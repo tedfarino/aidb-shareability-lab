@@ -123,6 +123,15 @@ function App() {
     "Measure results",
     "Feed learnings into next episode",
   ];
+  const manualPostingChecklist = [
+    "Choose platform",
+    "Copy asset",
+    "Open tracked source",
+    "Paste/edit manually",
+    "Post manually",
+    "Record timestamp",
+    "Check metrics after 24h",
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -295,6 +304,19 @@ function App() {
                 </div>
               ))}
             </div>
+          </section>
+
+          <section className="manual-checklist" aria-label="Manual posting checklist">
+            <div className="panel-header">
+              <Clipboard size={16} aria-hidden="true" />
+              Manual Posting Checklist
+            </div>
+            <p className="review-note">No posting is automated.</p>
+            <ol className="checklist-steps">
+              {manualPostingChecklist.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
           </section>
 
           <section className="outbound-queue" aria-label="Outbound test queue">
