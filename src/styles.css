@@ -83,6 +83,7 @@ h1 {
 
 .hero-panel,
 .reason-box,
+.proof-work,
 .system-summary,
 .automation-roadmap,
 .intake-contract,
@@ -202,6 +203,47 @@ h1 {
   background: #fffdf8;
   font-size: 0.84rem;
   font-weight: 800;
+}
+
+.proof-work {
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.proof-column {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #fffdf8;
+}
+
+.proof-column h3 {
+  margin: 0 0 8px;
+  color: #17201c;
+  font-size: 0.9rem;
+}
+
+.proof-column ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-column li {
+  color: #52615a;
+  font-size: 0.82rem;
+  font-weight: 750;
+  line-height: 1.25;
 }
 
 .perspective-filter {
@@ -664,6 +706,7 @@ meter {
   .workspace,
   .moment-grid,
   .method-strip,
+  .proof-grid,
   .summary-grid,
   .roadmap-grid,
   .intake-grid,

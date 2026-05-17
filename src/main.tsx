@@ -70,6 +70,20 @@ function App() {
     ["Outbound tests", outboundTests.length],
     ["Top audience/channel", topAudienceChannel],
   ];
+  const proofOfWork: Array<[string, string[]]> = [
+    [
+      "Live now",
+      ["Share assets", "Copy buttons", "Tracked links", "X taste calibration", "Outbound queue", "Runbook"],
+    ],
+    [
+      "Human review/manual",
+      ["Posting", "Clip approval", "Timestamping", "Final copy judgment"],
+    ],
+    [
+      "Planned automation",
+      ["Episode ingest", "Transcript analysis", "Metrics ingest", "Learning loop"],
+    ],
+  ];
   const automationRoadmap = [
     ["Episode ingest", "planned"],
     ["Transcript analysis", "planned"],
@@ -173,6 +187,25 @@ function App() {
             <span>Package: share-ready copy</span>
             <span>Measure: tracked source link</span>
           </div>
+
+          <section className="proof-work" aria-label="Proof of work">
+            <div className="panel-header">
+              <BarChart3 size={16} aria-hidden="true" />
+              Proof of Work
+            </div>
+            <div className="proof-grid">
+              {proofOfWork.map(([column, rows]) => (
+                <div className="proof-column" key={column}>
+                  <h3>{column}</h3>
+                  <ul>
+                    {rows.map((row) => (
+                      <li key={row}>{row}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <section className="system-summary" aria-label="Growth system summary">
             <div className="panel-header">
