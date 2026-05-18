@@ -141,6 +141,15 @@ function App() {
     "Check 24h metrics",
     "Decide keep / change / drop",
   ];
+  const videoAssetQueue = [
+    ["Format", "X short video"],
+    ["Source", "10-20 sec AIDB podcast audio clip"],
+    ["Generation path", "fal.ai LTX-2.3 audio-to-video"],
+    ["First-frame hook", "Model access may not be the bottleneck"],
+    ["Video concept", "AI adoption bottleneck explainer driven by podcast audio"],
+    ["Caption status", "Pending"],
+    ["Publish status", "Approval required"],
+  ];
   const topMoment = useMemo(
     () =>
       rankedMoments
@@ -200,10 +209,10 @@ function App() {
 
         <section className="analysis">
           <div className="method-strip" aria-label="Prototype method">
-            <span>Input: episode</span>
-            <span>Find: audience growth moment</span>
-            <span>Package: share-ready copy</span>
-            <span>Measure: tracked source link</span>
+            <span>Input: podcast clip</span>
+            <span>Generate: LTX audio-to-video asset</span>
+            <span>Review: approve/edit</span>
+            <span>Measure: 24h retention/clicks</span>
           </div>
 
           <section className="proof-work" aria-label="Proof of work">
@@ -341,6 +350,24 @@ function App() {
                 <li key={step}>{step}</li>
               ))}
             </ol>
+          </section>
+
+          <section className="video-queue" aria-label="Video asset queue">
+            <div className="panel-header">
+              <Radio size={16} aria-hidden="true" />
+              Video Asset Queue
+            </div>
+            <p className="review-note">
+              No auto-posting. Audio clip selection and generated video require human approval.
+            </p>
+            <div className="video-queue-grid">
+              {videoAssetQueue.map(([label, value]) => (
+                <div className="video-queue-item" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="outbound-queue" aria-label="Outbound test queue">

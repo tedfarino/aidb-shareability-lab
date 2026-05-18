@@ -91,6 +91,7 @@ h1 {
 .processing-runbook,
 .manual-checklist,
 .manual-loop,
+.video-queue,
 .outbound-queue,
 .moment-card,
 .package-copy,
@@ -522,6 +523,45 @@ h1 {
   line-height: 1.25;
 }
 
+.video-queue {
+  margin-bottom: 12px;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.video-queue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.video-queue-item {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d8d5ca;
+  border-radius: 6px;
+  background: #fffdf8;
+}
+
+.video-queue-item span,
+.video-queue-item strong {
+  display: block;
+}
+
+.video-queue-item span {
+  margin-bottom: 5px;
+  color: #52615a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.video-queue-item strong {
+  color: #17201c;
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
 .outbound-queue {
   margin-bottom: 18px;
   padding: 14px;
@@ -770,6 +810,7 @@ meter {
   .runbook-grid,
   .checklist-steps,
   .loop-steps,
+  .video-queue-grid,
   .outbound-grid {
     grid-template-columns: 1fr;
   }
