@@ -1,0 +1,34 @@
+{
+  "topic": "best time to post on LinkedIn for B2B creator and local news analysis posts",
+  "query_type": "recommendations",
+  "searches": [
+    {
+      "source": "web",
+      "query": "best time to post on LinkedIn 2026 B2B weekdays morning"
+    },
+    {
+      "source": "web",
+      "query": "LinkedIn posting times 2026 creator posts Tuesday Wednesday Thursday"
+    },
+    {
+      "source": "youtube",
+      "query": "best time to post on LinkedIn 2026"
+    },
+    {
+      "source": "x",
+      "query": "\"best time to post\" LinkedIn 2026"
+    }
+  ],
+  "ranking": {
+    "prefer": [
+      "recent data-backed timing studies",
+      "B2B audience behavior",
+      "creator/operator posting advice",
+      "weekday morning windows"
+    ],
+    "avoid": [
+      "generic social media calendar advice with no data",
+      "industry-agnostic claims with no publication date"
+    ]
+  }
+}

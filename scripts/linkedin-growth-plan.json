@@ -1,0 +1,30 @@
+{
+  "topic": "LinkedIn growth strategy for solo creator local news analysis account",
+  "query_type": "recommendations",
+  "searches": [
+    {
+      "source": "reddit",
+      "query": "LinkedIn growth strategy creator B2B posts"
+    },
+    {
+      "source": "hackernews",
+      "query": "LinkedIn growth strategy"
+    },
+    {
+      "source": "web",
+      "query": "LinkedIn growth strategy 2026 creator posts comments carousels newsletters"
+    }
+  ],
+  "ranking": {
+    "prefer": [
+      "specific posting tactics",
+      "creator-led LinkedIn growth",
+      "commenting and relationship-building tactics",
+      "evidence from recent posts or practitioners"
+    ],
+    "avoid": [
+      "generic marketing funnel advice",
+      "agency pages with no concrete tactics"
+    ]
+  }
+}
